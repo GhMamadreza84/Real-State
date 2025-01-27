@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
+import { ThreeDots } from "react-loader-spinner";
 import styles from "@/template/SignupPage.module.css";
 import Link from "next/link";
-import { Toaster, toast } from "react-hot-toast";
+import { set } from "mongoose";
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const signupHandler = async (e) => {
     e.preventDefault();
@@ -17,13 +22,20 @@ const SignupPage = () => {
       toast.error("رمز و تکرار آن برابر نیست");
       return;
     }
+    setLoading(true);
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
-    console.log(res.status);
+    setLoading(false);
+    if (res.status === 201) {
+      toast.success("ساخت حساب با موفقیت انجام شد. لطفا صبر کنید");
+      router.push("/signin");
+    } else {
+      toast.error(data.error);
+    }
   };
   return (
     <div className={styles.form}>
@@ -47,9 +59,19 @@ const SignupPage = () => {
           value={rePassword}
           onChange={(e) => setRePassword(e.target.value)}
         />
-        <button type="submit" onClick={(e) => signupHandler(e)}>
-          ثبت نام
-        </button>
+        {loading ? (
+          <ThreeDots
+            color="#304ffe"
+            height={45}
+            ariaLabel="three-dots-loading"
+            visible={true}
+            wrapperStyle={{ margin: "auto" }}
+          />
+        ) : (
+          <button type="submit" onClick={(e) => signupHandler(e)}>
+            ثبت نام
+          </button>
+        )}
       </form>
       <p>
         حساب کاربری دارید؟
