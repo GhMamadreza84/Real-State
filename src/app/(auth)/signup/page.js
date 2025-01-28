@@ -5,7 +5,7 @@ import SignupPage from "@/template/SignupPage";
 
 const Signup = async () => {
   const session = await getServerSession(authOptions);
-  if (session) redirect("/");
+  if (session) redirect("/")
   return <SignupPage />;
 };
 
