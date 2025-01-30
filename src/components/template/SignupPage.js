@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { ThreeDots } from "react-loader-spinner";
 import styles from "@/template/SignupPage.module.css";
 import Link from "next/link";
-import { set } from "mongoose";
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
