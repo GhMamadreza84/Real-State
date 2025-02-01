@@ -3,12 +3,13 @@ import { NextResponse } from "next/server";
 import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
 import { Types } from "mongoose";
+import Profile from "@/models/Profile";
 
 export async function POST(req) {
   try {
     await connectDB();
     const body = await req.json();
-    console.log(body);
+    console.log("recive body", body);
     const {
       title,
       description,

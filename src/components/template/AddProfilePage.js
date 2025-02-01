@@ -21,8 +21,24 @@ const AddProfilePage = () => {
     rules: [],
     amenities: [],
   });
-  const submitHandler = () => {
-    console.log(profileData);
+  const submitHandler = async () => {
+    const formattedData = {
+      ...profileData,
+      price: Number(profileData.price),
+    };
+    console.log(formattedData);
+    const res = await fetch("/api/profile", {
+      method: "POST",
+      body: JSON.stringify(formattedData),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await res.json();
+    if (data.error) {
+      console.log(data);
+    } else {
+      console.log("success", data);
+    }
   };
   return (
     <div className={styles.container}>
@@ -42,7 +58,7 @@ const AddProfilePage = () => {
       />
       <TextInput
         title="آدرس"
-        name="address"
+        name="location"
         profileData={profileData}
         setProfileData={setProfileData}
       />
