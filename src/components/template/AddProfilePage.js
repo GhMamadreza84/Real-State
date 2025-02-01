@@ -1,5 +1,6 @@
 "use client";
 
+import CustomDatePicker from "@/module/CustomDatePicker";
 import RadioList from "@/module/RadioList";
 import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
@@ -75,6 +76,10 @@ const AddProfilePage = () => {
         profileData={profileData}
         setProfileData={setProfileData}
         type="rules"
+      />
+      <CustomDatePicker
+        profileData={profileData}
+        setProfileData={setProfileData}
       />
       <button className={styles.submit} onClick={() => submitHandler()}>
         ثبت آگهی
