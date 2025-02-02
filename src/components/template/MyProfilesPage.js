@@ -3,7 +3,7 @@ import styles from "@/template/MyProfilesPage.module.css";
 
 const MyProfilesPage = ({ profiles }) => {
   return (
-    <div>
+    <div className={styles.container}>
       {profiles.length ? null : (
         <p className={styles.text}>هیچ آگهی ثبت نشده است</p>
       )}
