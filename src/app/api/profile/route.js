@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
+import { Types } from "mongoose";
 import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
-import { Types } from "mongoose";
 import Profile from "@/models/Profile";
 
 export async function POST(req) {
@@ -63,6 +63,7 @@ export async function POST(req) {
       title,
       description,
       location,
+      phone,  
       realState,
       constructionDate,
       amenities,

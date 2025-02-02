@@ -1,12 +1,13 @@
 "use client";
 
+import { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
+import { ThreeDots } from "react-loader-spinner";
 import CustomDatePicker from "@/module/CustomDatePicker";
 import RadioList from "@/module/RadioList";
 import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
 import styles from "@/template/AddProfilePage.module.css";
-import { set } from "mongoose";
-import { useState } from "react";
 
 const AddProfilePage = () => {
   const [profileData, setProfileData] = useState({
@@ -21,7 +22,10 @@ const AddProfilePage = () => {
     rules: [],
     amenities: [],
   });
+  const [loading, setLoading] = useState(false);
+
   const submitHandler = async () => {
+    setLoading(true);
     const formattedData = {
       ...profileData,
       price: Number(profileData.price),
@@ -34,12 +38,14 @@ const AddProfilePage = () => {
     });
 
     const data = await res.json();
+    setLoading(false);
     if (data.error) {
-      console.log(data);
+      toast.error(data.error);
     } else {
-      console.log("success", data);
+      toast.success(data.message);
     }
   };
+  
   return (
     <div className={styles.container}>
       <h3>ثبت آگهی</h3>
@@ -97,9 +103,20 @@ const AddProfilePage = () => {
         profileData={profileData}
         setProfileData={setProfileData}
       />
-      <button className={styles.submit} onClick={() => submitHandler()}>
-        ثبت آگهی
-      </button>
+      <Toaster />
+      {loading ? (
+        <ThreeDots
+          color="#304ffe"
+          ariaLabel="three-dots-loading"
+          visible={true}
+          wrapperStyle={{ margin: "auto" }}
+          height={45}
+        />
+      ) : (
+        <button className={styles.submit} onClick={() => submitHandler()}>
+          ثبت آگهی
+        </button>
+      )}
     </div>
   );
 };
