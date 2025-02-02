@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-import { ThreeDots } from "react-loader-spinner";
 import CustomDatePicker from "@/module/CustomDatePicker";
 import RadioList from "@/module/RadioList";
 import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
 import styles from "@/template/AddProfilePage.module.css";
+import Loader from "@/module/Loader";
 
 const AddProfilePage = () => {
   const [profileData, setProfileData] = useState({
@@ -45,7 +45,7 @@ const AddProfilePage = () => {
       toast.success(data.message);
     }
   };
-  
+
   return (
     <div className={styles.container}>
       <h3>ثبت آگهی</h3>
@@ -105,13 +105,7 @@ const AddProfilePage = () => {
       />
       <Toaster />
       {loading ? (
-        <ThreeDots
-          color="#304ffe"
-          ariaLabel="three-dots-loading"
-          visible={true}
-          wrapperStyle={{ margin: "auto" }}
-          height={45}
-        />
+        <Loader />
       ) : (
         <button className={styles.submit} onClick={() => submitHandler()}>
           ثبت آگهی

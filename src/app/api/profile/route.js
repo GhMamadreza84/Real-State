@@ -63,7 +63,7 @@ export async function POST(req) {
       title,
       description,
       location,
-      phone,  
+      phone,
       realState,
       constructionDate,
       amenities,
@@ -85,3 +85,4 @@ export async function POST(req) {
     );
   }
 }
+
