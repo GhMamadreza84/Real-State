@@ -20,7 +20,6 @@ const MyProfiles = async () => {
       },
     },
   ]);
-  // console.log(user);
   return <MyProfilesPage profiles={user.profiles} />;
 };
 
