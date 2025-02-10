@@ -17,13 +17,13 @@ const TextList = ({ title, profileData, setProfileData, type }) => {
   const deleteHandler = (index) => {
     const list = [...profileData[type]];
     list.splice(index, 1);
-    setProfileData({ ...profileData, [type]: list  });
+    setProfileData({ ...profileData, [type]: list });
   };
 
   return (
     <div className={styles.container}>
       <p>{title}</p>
-      {profileData[type].map((i, index) => (
+      {profileData[type]?.map((i, index) => (
         <div className={styles.card} key={index}>
           <input
             type="text"
