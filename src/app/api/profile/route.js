@@ -5,6 +5,20 @@ import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
 import Profile from "@/models/Profile";
 
+export async function GET() {
+  try {
+    await connectDB();
+    const profiles = await Profile.find().select("-userId");
+    return NextResponse.json({ data: profiles });
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json(
+      { error: "مشکلی در سرور رخ داده است" },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(req) {
   try {
     await connectDB();
@@ -179,4 +193,3 @@ export async function PATCH(req) {
     );
   }
 }
-
