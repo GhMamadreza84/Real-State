@@ -8,7 +8,6 @@ import TextInput from "@/module/TextInput";
 import TextList from "@/module/TextList";
 import styles from "@/template/AddProfilePage.module.css";
 import Loader from "@/module/Loader";
-import { useRouter } from "next/router";
 
 const AddProfilePage = ({ data }) => {
   const [profileData, setProfileData] = useState({
@@ -29,8 +28,6 @@ const AddProfilePage = ({ data }) => {
     if (data) setProfileData(data);
   }, []);
 
-  const router = useRouter();
-
   const submitHandler = async () => {
     setLoading(true);
     const formattedData = {
@@ -50,7 +47,7 @@ const AddProfilePage = ({ data }) => {
       toast.error(data.error);
     } else {
       toast.success(data.message);
-      router.refresh();
+      window.location.reload();
     }
   };
 
@@ -67,7 +64,7 @@ const AddProfilePage = ({ data }) => {
       toast.error(data.error);
     } else {
       toast.success(data.message);
-      router.refresh();
+      window.location.reload();
     }
   };
   return (
