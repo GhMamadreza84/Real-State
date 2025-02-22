@@ -22,7 +22,7 @@ const getIconForCategory = (category) => {
   }
 };
 
-const Card = ({ data: { category, title, location, price } }) => {
+const Card = ({ data: { _id, category, title, location, price } }) => {
   return (
     <div className={styles.container}>
       <div className={styles.icon}>{getIconForCategory(category)}</div>
@@ -32,7 +32,7 @@ const Card = ({ data: { category, title, location, price } }) => {
         {location}
       </p>
       <span>{e2p(price.toLocaleString())} تومان</span>
-      <Link href="/">
+      <Link href={`/buy-residential/${_id}`}>
         مشاهده آگهی
         <BiLeftArrowAlt />
       </Link>

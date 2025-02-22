@@ -67,3 +67,23 @@ export async function DELETE(req, context) {
     );
   }
 }
+
+export async function GET(req, { params }) {
+  try {
+    await connectDB();
+
+    const { profileId } = params;
+    const profile = await Profile.findById(profileId);
+    if (!profile) {
+      return NextResponse.json({ error: "پروفایل یافت نشد" }, { status: 404 });
+    }
+
+    return NextResponse.json(profile, { status: 200 });
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json(
+      { error: "مشکلی در سرور رخ داده است" },
+      { status: 500 }
+    );
+  }
+}
