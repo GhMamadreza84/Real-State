@@ -1,6 +1,4 @@
-import Profile from "@/models/Profile";
 import DetailsPage from "@/template/DetailsPage";
-import connectDB from "@/utils/connectDB";
 import React from "react";
 
 const ProfileDetails = async ({ params: { profileId } }) => {
