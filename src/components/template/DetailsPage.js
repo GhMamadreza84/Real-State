@@ -24,7 +24,7 @@ const DetailsPage = ({ data }) => {
   };
   return (
     <div className={styles.container}>
-      {/* <div className={styles.main}>
+      <div className={styles.main}>
         <h1>{data.title}</h1>
         <span>
           <HiOutlineLocationMarker />
@@ -42,7 +42,7 @@ const DetailsPage = ({ data }) => {
         ) : (
           <p>هیج موردی ذکر نشده است</p>
         )}
-      </div> */}
+      </div>
       <div className={styles.sidebar}></div>
     </div>
   );
