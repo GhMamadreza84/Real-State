@@ -6,6 +6,8 @@ import { RiHome3Line } from "react-icons/ri";
 import { MdApartment } from "react-icons/md";
 import { GiOfficeChair } from "react-icons/gi";
 import styles from "@/template/DetailsPage.module.css";
+import ItemList from "@/module/ItemList";
+import Title from "@/module/Title";
 const DetailsPage = ({ data }) => {
   const categories = {
     aparatment: "آپارتمان",
@@ -30,18 +32,12 @@ const DetailsPage = ({ data }) => {
           <HiOutlineLocationMarker />
           {data.location}
         </span>
-        <h3 className={styles.title}>توضیحات</h3>
+        <Title>توضیحات</Title>
         <p>{data.description}</p>
-        <h3 className={styles.title}>امکانات</h3>
-        {data.amenities.length ? (
-          <ul>
-            {data.amenities.map((amenity, index) => (
-              <li key={index}>{amenity}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>هیج موردی ذکر نشده است</p>
-        )}
+        <Title>امکانات</Title>
+        <ItemList data={data.amenities} />
+        <Title>قوانین</Title>
+        <ItemList data={data.rules} />
       </div>
       <div className={styles.sidebar}></div>
     </div>
