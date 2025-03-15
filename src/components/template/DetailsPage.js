@@ -2,14 +2,13 @@ import { SiHomebridge } from "react-icons/si";
 import { AiOutlinePhone } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiCalendarCheck, BiShare, BiShareAlt, BiStore } from "react-icons/bi";
-import { RiHome3Line } from "react-icons/ri";
-import { MdApartment } from "react-icons/md";
-import { GiOfficeChair } from "react-icons/gi";
+import { icons } from "@/constants/icons";
 import { e2p, sp } from "@/utils/replaceNumber";
 import styles from "@/template/DetailsPage.module.css";
 import ItemList from "@/module/ItemList";
 import Title from "@/module/Title";
 import ShareButton from "@/module/ShareButton";
+import { categories } from "@/constants/strings";
 const DetailsPage = ({
   link,
   data: {
@@ -26,20 +25,6 @@ const DetailsPage = ({
   },
 }) => {
   const url = `http://localhost:3000/buy-residential/${link}`;
-
-  const categories = {
-    aparatment: "آپارتمان",
-    villa: "ویلا",
-    store: "مفازه",
-    office: "دفتر",
-  };
-
-  const icons = {
-    aparatment: <MdApartment />,
-    villa: <RiHome3Line />,
-    store: <BiStore />,
-    office: <GiOfficeChair />,
-  };
 
   return (
     <div className={styles.container}>
