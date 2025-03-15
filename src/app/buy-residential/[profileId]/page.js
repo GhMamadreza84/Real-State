@@ -13,7 +13,7 @@ const ProfileDetails = async ({ params: { profileId } }) => {
 
   return (
     <div>
-      <DetailsPage data={data} />
+      <DetailsPage data={data} link={profileId} />
     </div>
   );
 };
