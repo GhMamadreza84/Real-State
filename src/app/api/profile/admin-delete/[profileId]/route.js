@@ -23,11 +23,11 @@ export async function DELETE(req, { params }) {
 
     const profile = await Profile.findByIdAndDelete(profileId);
     if (!profile) {
-      return NextResponse.json({ error: "پروفایل پیدا نشد" }, { status: 404 });
+      return NextResponse.json({ error: "آگهی پیدا نشد" }, { status: 404 });
     }
 
     return NextResponse.json(
-      { message: "پروفایل با موفقیت حذف شد" },
+      { message: "آگهی با موفقیت حذف شد" },
       { status: 200 }
     );
   } catch (error) {
