@@ -14,6 +14,14 @@ const AdminCard = ({ data: { _id, title, description, price, location } }) => {
       window.location.reload();
     }
   };
+
+  const deleteHandler = async () => {
+    const res = await fetch(`/api/profile/admin-delete/${_id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    toast.success(data.message);
+  };
   return (
     <div className={styles.container}>
       <h3>{title}</h3>
@@ -23,6 +31,9 @@ const AdminCard = ({ data: { _id, title, description, price, location } }) => {
         <span>{sp(price)}</span>
       </div>
       <button onClick={publishHandler}>انتشار</button>
+      <button onClick={deleteHandler} className={styles.deleteBtn}>
+        حذف
+      </button>
       <Toaster />
     </div>
   );

@@ -45,3 +45,17 @@
 .container button:hover {
   color: #000;
 }
+
+.container .deleteBtn {
+  background-color: #a80000;
+  border: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-right: 10px;
+  transition: all ease-in 0.1s;
+}
