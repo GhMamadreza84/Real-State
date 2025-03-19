@@ -4,8 +4,8 @@ import { yekan } from "@/utils/fonts";
 import NextAuthProvider from "@/providers/NextAuthProvider";
 
 export const metadata = {
-  title: "Real State Project",
-  description: "Real state app ",
+  title: "پروژه املاک",
+  description: "سایت خرید و فروش ملک",
 };
 
 export default function RootLayout({ children }) {
