@@ -1,4 +1,6 @@
+import Profile from "@/models/Profile";
 import DetailsPage from "@/template/DetailsPage";
+import connectDB from "@/utils/connectDB";
 import React from "react";
 
 const ProfileDetails = async ({ params: { profileId } }) => {
@@ -19,3 +21,13 @@ const ProfileDetails = async ({ params: { profileId } }) => {
 };
 
 export default ProfileDetails;
+
+export const generateMetadata = async ({ params: profileId }) => {
+  await connectDB();
+  const profile = await Profile.findeOne({ _id: profileId });
+
+  return {
+    title: profile.title,
+    description: profile.description,
+  };
+};

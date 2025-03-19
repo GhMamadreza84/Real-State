@@ -18,3 +18,4 @@ const BuyResidential = async ({ searchParams }) => {
 };
 
 export default BuyResidential;
+
