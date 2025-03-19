@@ -5,7 +5,7 @@ import React from "react";
 
 const ProfileDetails = async ({ params: { profileId } }) => {
   const res = await fetch(
-    `http://localhost:3000/api/profile/delete/${profileId}`,
+    `https://real-state-gh.vercel.app/api/profile/delete/${profileId}`,
     {
       next: { revalidate: 60 },
     }

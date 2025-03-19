@@ -2,7 +2,7 @@ import BuyResidentialPage from "@/template/BuyResidentialPage";
 
 const BuyResidential = async ({ searchParams }) => {
   // This method is not recommended use it only when your API route is a foreign API route.
-  const res = await fetch("http://localhost:3000/api/profile", {
+  const res = await fetch("https://real-state-gh.vercel.app/api/profile", {
     cache: "no-store",
   });
   const data = await res.json();

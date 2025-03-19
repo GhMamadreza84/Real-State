@@ -24,7 +24,7 @@ const DetailsPage = ({
     constructionDate,
   },
 }) => {
-  const url = `http://localhost:3000/buy-residential/${link}`;
+  const url = `https://real-state-gh.vercel.app/buy-residential/${link}`;
 
   return (
     <div className={styles.container}>
