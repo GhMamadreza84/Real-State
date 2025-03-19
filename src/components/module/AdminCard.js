@@ -9,9 +9,8 @@ const AdminCard = ({ data: { _id, title, description, price, location } }) => {
       method: "PATCH",
     });
     const result = await res.json();
-    if (res.message) {
+    if (result.message) {
       toast.success(result.message);
-      window.location.reload();
     }
   };
 
