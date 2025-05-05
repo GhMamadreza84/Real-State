@@ -31,6 +31,13 @@ const SigninPage = () => {
   };
   return (
     <div className={styles.form}>
+      <p>
+        User : mamadreza
+        <br></br>
+        Password : 123
+        <br></br>
+        Role : ADMIN
+      </p>
       <h4>فرم ورود :</h4>
       <form>
         <label> ایمیل:</label>
@@ -58,6 +65,7 @@ const SigninPage = () => {
         حساب کاربری ندارید؟
         <Link href="/signup">ثبت نام</Link>
       </p>
+
       <Toaster />
     </div>
   );
