@@ -1,33 +1,26 @@
 import Profile from "@/models/Profile";
 import DetailsPage from "@/template/DetailsPage";
 import connectDB from "@/utils/connectDB";
-import React from "react";
 
-const ProfileDetails = async ({ params: { profileId } }) => {
-  const res = await fetch(
-    `https://real-state-gh.vercel.app/api/profile/delete/${profileId}`,
-    {
-      next: { revalidate: 60 },
-    }
-  );
-  if (!res) return <h3>اگهی مورد نظر یافت نشد</h3>;
-  const data = await res.json();
+async function ProfileDetails({ params: { profileId } }) {
+  await connectDB();
+  const profile = await Profile.findOne({ _id: profileId });
 
-  return (
-    <div>
-      <DetailsPage data={data} link={profileId} />
-    </div>
-  );
-};
+  if (!profile) return <h3>مشکلی پیش آمده است</h3>;
+
+  return <DetailsPage data={profile} />;
+}
 
 export default ProfileDetails;
 
-export const generateMetadata = async ({ params: profileId }) => {
+export const generateMetadata = async ({ params: { profileId } }) => {
   await connectDB();
-  const profile = await Profile.findeOne({ _id: profileId });
+  const profile = await Profile.findOne({ _id: profileId });
 
   return {
     title: profile.title,
     description: profile.description,
+    authors: { name: profile.realState },
+    other: { mytag: "test meta tag" },
   };
 };
