@@ -1,8 +1,10 @@
-# 🏠 سامانه هوشمند املاک | Real Estate Platform
+
+# 🏠 Smart Real Estate Platform
 
 <div align="center">
 
-یک پلتفرم مدرن و هوشمند برای خرید، فروش و اجاره املاک، توسعه داده شده با Next.js و MongoDB.
+A modern and intelligent platform for buying, selling, and renting properties, developed with Next.js and MongoDB.
+
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -20,87 +22,75 @@
 
 ---
 
-## 📝 درباره پروژه (About The Project)
 
-این پروژه یک پلتفرم جامع برای مدیریت و جستجوی املاک و مستغلات است که با هدف ارائه یک تجربه کاربری روان و مدرن طراحی شده است. کاربران می‌توانند به راحتی آگهی‌های مختلف را مشاهده کرده، جستجو کنند و آگهی‌های خود را ثبت نمایند. همچنین یک پنل مدیریت قدرتمند برای ادمین‌ها و یک داشبورد کاربری اختصاصی برای کاربران در نظر گرفته شده است.
+## 📝 About The Project
 
-### ✨ ویژگی‌های کلیدی (Key Features)
+This project is a comprehensive platform for managing and searching real estate listings, designed to provide a smooth and modern user experience. Users can easily view, search, and post listings. It also features a powerful admin panel for administrators and a dedicated user dashboard.
 
-- **جستجوی پیشرفته:** فیلتر کردن املاک بر اساس دسته‌بندی (ویلا، آپارتمان، مغازه، دفتر).
-- **سیستم احراز هویت:** ثبت‌نام و ورود امن کاربران با استفاده از Next-Auth.
-- **داشبورد کاربری:** مدیریت آگهی‌ها و اطلاعات شخصی کاربران.
-- **پنل مدیریت:** کنترل کامل بر روی آگهی‌ها و کاربران توسط ادمین.
-- **طراحی واکنش‌گرا (Responsive):** تجربه‌ی کاربری یکپارچه در دسکتاپ و موبایل.
-- **صفحه‌بندی پویا:** بارگذاری و نمایش بهینه‌ی آگهی‌ها.
+### ✨ Key Features
 
----
-
-## 🛠️ ساخته شده با (Built With)
-
-این پروژه با استفاده از جدیدترین تکنولوژی‌های وب توسعه داده شده است:
-
-* **[Next.js](https://nextjs.org/):** فریمورک React برای ساخت اپلیکیشن‌های وب مدرن و بهینه.
-* **[React](https://reactjs.org/):** کتابخانه‌ی محبوب برای ساخت رابط‌های کاربری پویا.
-* **[MongoDB](https://www.mongodb.com/):** دیتابیس NoSQL برای ذخیره‌سازی اطلاعات به صورت انعطاف‌پذیر.
-* **[Mongoose](https://mongoosejs.com/):** ابزاری برای مدل‌سازی داده‌های MongoDB.
-* **[Next-Auth](https://next-auth.js.org/):** راه‌حل کامل برای مدیریت احراز هویت در پروژه‌های Next.js.
-* **[React Icons](https://react-icons.github.io/react-icons/):** مجموعه‌ای از آیکون‌های زیبا و کاربردی.
+- **Advanced Search:** Filter properties by category (villa, apartment, store, office).
+- **Authentication System:** Secure user registration and login using Next-Auth.
+- **User Dashboard:** Manage personal listings and user information.
+- **Admin Panel:** Full control over listings and users for the admin.
+- **Responsive Design:** Seamless user experience on both desktop and mobile.
+- **Dynamic Pagination:** Efficient loading and display of listings.
 
 ---
 
-## 🚀 شروع به کار (Getting Started)
+## 🛠️ Built With
 
-برای راه‌اندازی پروژه به صورت محلی، مراحل زیر را دنبال کنید.
+This project was developed using the latest web technologies:
 
-### پیش‌نیازها (Prerequisites)
+* **[Next.js](https://nextjs.org/):** A React framework for building modern and optimized web applications.
+* **[React](https://reactjs.org/):** A popular library for building dynamic user interfaces.
+* **[MongoDB](https://www.mongodb.com/):** A NoSQL database for flexible data storage.
+* **[Mongoose](https://mongoosejs.com/):** A tool for modeling MongoDB data.
+* **[Next-Auth](https://next-auth.js.org/):** A complete solution for handling authentication in Next.js projects.
+* **[React Icons](https://react-icons.github.io/react-icons/):** A collection of beautiful and useful icons.
 
-- **Node.js:** نسخه‌ی 18.x یا بالاتر.
-- **MongoDB:** یک نمونه از دیتابیس MongoDB (می‌توانید از MongoDB Atlas به صورت رایگان استفاده کنید).
+---
 
-### نصب و اجرا (Installation)
+## 🚀 Getting Started
 
-1. **پروژه را کلون کنید:**
-   ابتدا پروژه را از ریپازیتوری اصلی کلون کنید.
+To set up the project locally, follow the steps below.
 
-2. **نصب وابستگی‌ها:**
-   ```sh
-   npm install
-   ```
+### Prerequisites
 
-3. **تنظیم متغیرهای محیطی:**
-   یک فایل `.env.local` در ریشه‌ی پروژه ایجاد کرده و متغیرهای زیر را در آن قرار دهید:
-   ```env
-   MONGODB_URI=your_mongodb_connection_string
-   NEXTAUTH_SECRET=your_super_secret_key
-   ```
+- **Node.js:** Version 18.x or higher.
+- **MongoDB:** An instance of MongoDB (you can use MongoDB Atlas for free).
 
-4. **اجرای پروژه:**
+### Installation
+
+1. **Clone the repository:**
+   First, clone the project from the main repository.
+
+2. **Install dependencies:**
+
+4. **Run the project:**
    ```sh
    npm run dev
    ```
-   حالا می‌توانید پروژه را در آدرس `http://localhost:3000` مشاهده کنید.
+   You can now view the project at `http://localhost:3000`.
 
 ---
 
-## 📂 ساختار پروژه (Project Structure)
+## 📂 Project Structure
 
-ساختار کلی پروژه به شکل زیر است تا توسعه و نگهداری آن ساده باشد:
+The overall project structure is designed to be simple and maintainable:
 
 ```
-├── public/              # فایل‌های استاتیک (تصاویر، فونت‌ها)
+├── public/              # Static files (images, fonts)
 ├── src/
-│   ├── app/             # مسیرها و صفحات اصلی (Routing)
-│   │   ├── (auth)/      # صفحات ثبت‌نام و ورود
-│   │   ├── admin/       # پنل مدیریت
-│   │   ├── api/         # مسیرهای API
-│   │   └── dashboard/   # داشبورد کاربری
-│   ├── components/      # کامپوننت‌های قابل استفاده مجدد
-│   │   ├── module/      # کامپوننت‌های پیچیده‌تر
-│   │   └── template/    # کامپوننت‌های اصلی صفحات
-│   ├── models/          # مدل‌های دیتابیس (Mongoose Schemas)
-│   ├── providers/       # ارائه‌دهندگان کانتکست (Context Providers)
-│   └── utils/           # توابع کمکی و ابزارها
-├── .eslintrc.json
-├── next.config.js
-└── package.json
-```
+│   ├── app/             # Main routes and pages (Routing)
+│   │   ├── (auth)/      # Registration and login pages
+│   │   ├── admin/       # Admin panel
+│   │   ├── api/         # API routes
+│   │   └── dashboard/   # User dashboard
+│   ├── components/      # Reusable components
+│   │   ├── module/      # More complex components
+│   │   └── template/    # Main page templates
+│   ├── models/          # Database models (Mongoose Schemas)
+│   ├── providers/       # Context Providers
+│   └── utils/           # Helper functions and tools
+=======
