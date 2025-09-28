@@ -1,8 +1,10 @@
+
 # 🏠 Smart Real Estate Platform
 
 <div align="center">
 
 A modern and intelligent platform for buying, selling, and renting properties, developed with Next.js and MongoDB.
+
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -19,6 +21,7 @@ A modern and intelligent platform for buying, selling, and renting properties, d
 </div>
 
 ---
+
 
 ## 📝 About The Project
 
@@ -63,16 +66,6 @@ To set up the project locally, follow the steps below.
    First, clone the project from the main repository.
 
 2. **Install dependencies:**
-   ```sh
-   npm install
-   ```
-
-3. **Set up environment variables:**
-   Create a `.env.local` file in the project root and add the following variables:
-   ```env
-   MONGODB_URI=your_mongodb_connection_string
-   NEXTAUTH_SECRET=your_super_secret_key
-   ```
 
 4. **Run the project:**
    ```sh
@@ -100,7 +93,4 @@ The overall project structure is designed to be simple and maintainable:
 │   ├── models/          # Database models (Mongoose Schemas)
 │   ├── providers/       # Context Providers
 │   └── utils/           # Helper functions and tools
-├── .eslintrc.json
-├── next.config.js
-└── package.json
-```
+=======
