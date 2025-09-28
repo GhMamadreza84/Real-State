@@ -7,6 +7,8 @@ import DasboardSidebar from "@/layout/DasboardSidebar";
 import AdminPage from "@/template/AdminPage";
 import Profile from "@/models/Profile";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "پنل ادمین املاک",
 };
